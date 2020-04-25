@@ -1,4 +1,4 @@
-#!/usr/bin/python2.4 -tt
+#!/usr/bin/python3 -tt
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -17,8 +17,14 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-    # +++your code here+++
-    return
+    if len(s) < 3:
+        result = s
+    elif s[-3:] == 'ing':
+        result = s + 'ly'
+    else:
+        result = s + 'ing'
+
+    return result
 
 
 # E. not_bad
@@ -30,8 +36,16 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    # +++your code here+++
-    return
+    result = s
+
+    not_index = s.find('not')
+    if not_index >= 0:
+        bad_index = s.find('bad', not_index)
+        if bad_index >= 0:
+            end_of_bad_index = bad_index + 3
+            result = s[:not_index] + 'good' + s[end_of_bad_index:]
+
+    return result
 
 
 # F. front_back
@@ -42,8 +56,21 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    # +++your code here+++
-    return
+    split_a = split_into_halves(a)
+    split_b = split_into_halves(b)
+
+    return split_a[0] + split_b[0] + split_a[1] + split_b[1]
+
+
+def split_into_halves(string):
+    length_of_string = len(string)
+
+    if length_of_string % 2 == 0:
+        split_index = int(length_of_string / 2)
+    else:
+        split_index = int((length_of_string + 1) / 2)
+
+    return [string[:split_index], string[split_index:]]
 
 
 # Simple provided test() function used in main() to print
