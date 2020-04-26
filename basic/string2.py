@@ -63,12 +63,12 @@ def front_back(a, b):
 
 
 def split_into_halves(s):
-    lenght_of_s = len(s)
+    length_of_s = len(s)
 
-    if lenght_of_s % 2 == 0:
-        split_index = lenght_of_s // 2
+    if length_of_s % 2 == 0:
+        split_index = length_of_s // 2
     else:
-        split_index = (lenght_of_s + 1) // 2
+        split_index = (length_of_s + 1) // 2
 
     return [s[:split_index], s[split_index:]]
 
