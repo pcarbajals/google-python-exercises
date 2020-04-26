@@ -62,15 +62,15 @@ def front_back(a, b):
     return split_a[0] + split_b[0] + split_a[1] + split_b[1]
 
 
-def split_into_halves(string):
-    length_of_string = len(string)
+def split_into_halves(s):
+    lenght_of_s = len(s)
 
-    if length_of_string % 2 == 0:
-        split_index = int(length_of_string / 2)
+    if lenght_of_s % 2 == 0:
+        split_index = int(lenght_of_s / 2)
     else:
-        split_index = int((length_of_string + 1) / 2)
+        split_index = int((lenght_of_s + 1) / 2)
 
-    return [string[:split_index], string[split_index:]]
+    return [s[:split_index], s[split_index:]]
 
 
 # Simple provided test() function used in main() to print
