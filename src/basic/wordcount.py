@@ -43,7 +43,7 @@ import sys
 def print_words(filename):
     """
     Counts how often each word appears in the specified text and prints the results. Special characters and digits are
-    counted.
+    included, but character case doesn't count.
     :param filename: the file path to a text file for processing
     :return: the results of the word count in the following format:
     word1 count1

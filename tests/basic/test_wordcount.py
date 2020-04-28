@@ -24,3 +24,16 @@ coach 1'''
 
 def test_print_words_with_small_file(small_file_print_words):
     assert print_words('tests/small.txt') == small_file_print_words
+
+
+def test_print_words_with_simple_file():
+    expected = '''to 2
+be, 1
+or 1
+not 1
+be 1
+-- 1
+william 1
+shakespeare 1'''
+
+    assert print_words('tests/simple.txt') == expected
