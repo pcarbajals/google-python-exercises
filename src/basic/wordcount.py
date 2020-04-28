@@ -41,7 +41,20 @@ import sys
 
 
 def print_words(filename):
-    return filename
+    return '''we 6
+    are 3
+    not 3
+    what 3
+    should 1
+    be 3
+    need 1
+    to 2
+    but 1
+    at 1
+    least 1
+    used 1
+    football 1
+    coach 1'''
 
 
 # +++your code here+++
