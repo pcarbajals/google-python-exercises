@@ -22,5 +22,5 @@ football 1
 coach 1'''
 
 
-def test_print_words(small_file_print_words):
+def test_print_words_with_small_file(small_file_print_words):
     assert print_words('tests/small.txt') == small_file_print_words
