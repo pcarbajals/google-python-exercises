@@ -1,1 +1,9 @@
+# Byte-compiled
+*.py[cod]
+
+# IntelliJ IDEA
 .idea/
+
+# Pytest
+.pytest_cache/
+__pycache__/
