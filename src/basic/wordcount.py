@@ -41,23 +41,36 @@ import sys
 
 
 def print_words(filename):
-    return '''we 6
-    are 3
-    not 3
-    what 3
-    should 1
-    be 3
-    need 1
-    to 2
-    but 1
-    at 1
-    least 1
-    used 1
-    football 1
-    coach 1'''
+    """
+    Counts how often each word appears in the specified text and prints the results. Special characters and digits are
+    counted.
+    :param filename: the file path to a text file for processing
+    :return: the results of the word count in the following format:
+    word1 count1
+    word2 count2
+    """
+
+    word_dict = dict()
+
+    with open(filename, 'r') as f:
+        for line in f:
+            for word in line.lower().split():
+                if word in word_dict:
+                    word_dict[word] += 1
+                else:
+                    word_dict[word] = 1
+
+    result = ''
+    for key in word_dict:
+        if result:
+            # adds end of line before appending next line, except for the first line
+            result += '\n'
+
+        result += '%s %d' % (key, word_dict[key])
+
+    return result
 
 
-# +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
