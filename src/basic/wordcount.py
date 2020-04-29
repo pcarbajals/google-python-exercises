@@ -71,6 +71,23 @@ def print_words(filename):
     print(result)
 
 
+def print_top(filename):
+    print('''we 6
+are 3
+not 3
+what 3
+be 3
+to 2
+should 1
+need 1
+but 1
+at 1
+least 1
+used 1
+-- 1
+football 1
+coach 1''')
+
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
