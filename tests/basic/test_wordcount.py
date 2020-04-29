@@ -4,7 +4,7 @@ from src.basic.wordcount import print_words
 
 
 @pytest.fixture
-def expected_small_file_output():
+def print_words_small_output():
     return '''we 6
 are 3
 not 3
@@ -24,7 +24,7 @@ coach 1
 
 
 @pytest.fixture
-def expected_simple_file_output():
+def print_words_simple_output():
     return '''to 2
 be, 1
 or 1
@@ -36,11 +36,11 @@ shakespeare 1
 '''
 
 
-def test_print_words_with_small_file(capsys, expected_small_file_output):
+def test_print_words_with_small_file(capsys, print_words_small_output):
     print_words('tests/small.txt')
-    assert capsys.readouterr().out == expected_small_file_output
+    assert capsys.readouterr().out == print_words_small_output
 
 
-def test_print_words_with_simple_file(capsys, expected_simple_file_output):
+def test_print_words_with_simple_file(capsys, print_words_simple_output):
     print_words('tests/simple.txt')
-    assert capsys.readouterr().out == expected_simple_file_output
+    assert capsys.readouterr().out == print_words_simple_output
