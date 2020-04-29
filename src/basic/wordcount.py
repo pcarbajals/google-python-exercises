@@ -44,21 +44,14 @@ def print_words(filename):
     """
     Counts how often each word appears in the specified text and prints the results. Special characters and digits are
     included, but character case doesn't count.
-    :param filename: the file path to a text file for processing
-    :return: the results of the word count in the following format:
+    The results are printed out to system standard output in the following format:
     word1 count1
     word2 count2
+    :param filename: the file path to a text file for processing
+    :return: None
     """
 
-    word_dict = dict()
-
-    with open(filename, 'r') as f:
-        for line in f:
-            for word in line.lower().split():
-                if word in word_dict:
-                    word_dict[word] += 1
-                else:
-                    word_dict[word] = 1
+    word_dict = create_dictionary(filename)
 
     result = ''
     for key in word_dict:
@@ -87,6 +80,27 @@ used 1
 -- 1
 football 1
 coach 1''')
+
+
+def create_dictionary(filename):
+    """
+    Utility function for creating a dictionary of words (key) and its count (value) in the specified file. Special
+    characters and digits are included, but character case doesn't count.
+    :param filename: the file path to a text file for processing
+    :return: a dictionary where the key is a word and the value is the number of time that word is found in the file
+    """
+    word_dict = dict()
+
+    with open(filename, 'r') as f:
+        for line in f:
+            for word in line.lower().split():
+                if word in word_dict:
+                    word_dict[word] += 1
+                else:
+                    word_dict[word] = 1
+
+    return word_dict
+
 
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
