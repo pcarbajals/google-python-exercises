@@ -68,7 +68,7 @@ def print_words(filename):
 
         result += '%s %d' % (key, word_dict[key])
 
-    return result
+    print(result)
 
 
 # Define print_words(filename) and print_top(filename) functions.
