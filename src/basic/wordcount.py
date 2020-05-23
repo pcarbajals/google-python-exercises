@@ -40,6 +40,12 @@ print_words() and print_top().
 import sys
 
 
+# Define print_words(filename) and print_top(filename) functions.
+# You could write a helper utility function that reads a file
+# and builds and returns a word/count dict for it.
+# Then print_words() and print_top() can just call the utility function.
+
+
 def print_words(filename):
     """
     Counts how often each word appears in the specified text and prints the results. Special characters and digits are
@@ -65,6 +71,16 @@ def print_words(filename):
 
 
 def print_top(filename):
+    """
+    Counts how often each word appears in the specified text and prints out the top 20 most common words sorted so the
+    most common word is first, then the next most common, and so on. Special characters and digits are included, but
+    character case doesn't count.
+    The results are printed out to system standard output in the following format:
+    top_word1
+    top_word2
+    :param filename: the file path to a text file for processing
+    :return: None
+    """
     print('''we 6
 are 3
 not 3
@@ -101,11 +117,6 @@ def create_dictionary(filename):
 
     return word_dict
 
-
-# Define print_words(filename) and print_top(filename) functions.
-# You could write a helper utility function that reads a file
-# and builds and returns a word/count dict for it.
-# Then print_words() and print_top() can just call the utility function.
 
 ###
 
