@@ -25,6 +25,20 @@ what 3
 
 
 @pytest.fixture
+def print_words_simple_output():
+    return '''-- 1
+be 1
+be, 1
+not 1
+or 1
+shakespeare 1
+to 2
+william 1
+'''
+
+
+
+@pytest.fixture
 def print_top_small_output():
     return '''we
 are
@@ -44,16 +58,29 @@ coach
 '''
 
 
+
 @pytest.fixture
-def print_words_simple_output():
-    return '''-- 1
-be 1
-be, 1
-not 1
-or 1
-shakespeare 1
-to 2
-william 1
+def print_top_large_output():
+    return '''the
+and
+to
+a
+she
+of
+said
+it
+in
+was
+you
+i
+as
+that
+alice
+her
+at
+had
+with
+all
 '''
 
 
@@ -70,3 +97,8 @@ def test_print_words_with_simple_file(capsys, print_words_simple_output):
 def test_print_top_with_small_file(capsys, print_top_small_output):
     print_top('tests/small.txt')
     assert capsys.readouterr().out == print_top_small_output
+
+
+def test_print_top_with_large_file(capsys, print_top_large_output):
+    print_top('tests/alice.txt')
+    assert capsys.readouterr().out == print_top_large_output
