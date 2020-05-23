@@ -82,21 +82,17 @@ def print_top(filename):
     :return: None
     """
 
-    print('''we
-are
-not
-what
-be
-to
-should
-need
-but
-at
-least
-used
---
-football
-coach''')
+    word_dict = create_dictionary(filename)
+
+    result = ''
+    for key in sorted(word_dict, key=word_dict.get, reverse=True):
+        if result:
+            # adds end of line before appending next line, except for the first line
+            result += '\n'
+
+        result += key
+
+    print(result)
 
 
 def create_dictionary(filename):
