@@ -26,21 +26,21 @@ coach 1
 
 @pytest.fixture
 def print_top_small_output():
-    return '''we 6
-are 3
-not 3
-what 3
-be 3
-to 2
-should 1
-need 1
-but 1
-at 1
-least 1
-used 1
--- 1
-football 1
-coach 1
+    return '''we
+are
+not
+what
+be
+to
+should
+need
+but
+at
+least
+used
+--
+football
+coach
 '''
 
 
