@@ -59,15 +59,8 @@ def print_words(filename):
 
     word_dict = create_dictionary(filename)
 
-    result = ''
     for key in sorted(word_dict):
-        if result:
-            # adds end of line before appending next line, except for the first line
-            result += '\n'
-
-        result += '%s %d' % (key, word_dict[key])
-
-    print(result)
+        print('%s %d' % (key, word_dict[key]))
 
 
 def print_top(filename):
@@ -84,15 +77,9 @@ def print_top(filename):
 
     word_dict = create_dictionary(filename)
 
-    result = ''
-    for key in sorted(word_dict, key=word_dict.get, reverse=True)[:20]:
-        if result:
-            # adds end of line before appending next line, except for the first line
-            result += '\n'
-
-        result += key
-
-    print(result)
+    words_sorted_by_frequency = sorted(word_dict, key=word_dict.get, reverse=True)
+    for key in words_sorted_by_frequency[:20]:
+        print(key)
 
 
 def create_dictionary(filename):
