@@ -60,7 +60,7 @@ def print_words(filename):
     word_dict = create_dictionary(filename)
 
     result = ''
-    for key in word_dict:
+    for key in sorted(word_dict):
         if result:
             # adds end of line before appending next line, except for the first line
             result += '\n'
