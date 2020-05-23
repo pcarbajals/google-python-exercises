@@ -6,21 +6,21 @@ from src.basic.wordcount import print_top
 
 @pytest.fixture
 def print_words_small_output():
-    return '''we 6
+    return '''-- 1
 are 3
-not 3
-what 3
-should 1
-be 3
-need 1
-to 2
-but 1
 at 1
-least 1
-used 1
--- 1
-football 1
+be 3
+but 1
 coach 1
+football 1
+least 1
+need 1
+not 3
+should 1
+to 2
+used 1
+we 6
+what 3
 '''
 
 
@@ -46,14 +46,14 @@ coach
 
 @pytest.fixture
 def print_words_simple_output():
-    return '''to 2
-be, 1
-or 1
-not 1
+    return '''-- 1
 be 1
--- 1
-william 1
+be, 1
+not 1
+or 1
 shakespeare 1
+to 2
+william 1
 '''
 
 
